@@ -4,7 +4,6 @@
     <TargetFramework>net6.0</TargetFramework>
 	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	  <AssemblyName>BitwiseJonMods.OneClickShedReloader</AssemblyName>
-    <StardewGamePath>$(SolutionDir)DummyGamePath</StardewGamePath>
   </PropertyGroup>
 
   <ItemGroup>
