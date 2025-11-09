@@ -1,6 +1,7 @@
 ﻿using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
+using StardewValley.Buildings;
 using StardewValley.Menus;
 
 namespace BitwiseJonMods
@@ -14,6 +15,19 @@ namespace BitwiseJonMods
             BitwiseJonMods.Common.Utility.InitLogging(this.Monitor);
             _config = helper.ReadConfig<ModConfig>();
             helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
+            helper.Events.World.BuildingListChanged += this.OnBuildingListChanged;
+        }
+
+        private void OnBuildingListChanged(object sender, BuildingListChangedEventArgs e)
+        {
+            foreach (Building building in e.Added)
+            {
+                if (building.buildingType.Value == "Coop")
+                {
+                    BitwiseJonMods.Common.Utility.Log("Coop built, completing quest 6.");
+                    Game1.player.completeQuest(6);
+                }
+            }
         }
 
         private void OnGameLaunched(object sender, GameLaunchedEventArgs args)
