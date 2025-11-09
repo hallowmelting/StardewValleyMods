@@ -6,6 +6,10 @@
 	  <AssemblyName>BitwiseJonMods.OneClickShedReloader</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <StardewGamePath>$(MSBuildThisFileDirectory)DummyGamePath</StardewGamePath>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
   </ItemGroup>

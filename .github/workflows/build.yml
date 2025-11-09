@@ -10,8 +10,6 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-    env:
-      StardewGamePath: ${{ github.workspace }}/DummyGamePath
 
     steps:
     # 1. 코드 가져오기
